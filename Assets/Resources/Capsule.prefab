@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1945304408549272972
 Transform:
   m_ObjectHideFlags: 0
@@ -127,6 +127,8 @@ GameObject:
   - component: {fileID: 8117370150132413741}
   - component: {fileID: 5068045287946971822}
   - component: {fileID: 3477160092392945814}
+  - component: {fileID: 3886561177875276316}
+  - component: {fileID: 7255586621872310391}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -236,9 +238,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 4
+  sprintSpeed: 14
   maxVelocityChange: 10
+  airControl: 0.5
+  jumpHeight: 5
   input: {x: 0, y: 0}
   rb: {fileID: 0}
+  sprinting: 0
+  jumping: 0
+  grounded: 0
 --- !u!54 &7822727412343838541
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -322,3 +330,38 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &3886561177875276316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123544287889174950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 322ac1718e1567749a808653b150366c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 7909109409019164996}
+  playerCamera: {fileID: 722198714865792659}
+--- !u!135 &7255586621872310391
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123544287889174950}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.509
+  m_Center: {x: 0, y: -0.653, z: 0}
